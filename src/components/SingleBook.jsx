@@ -43,14 +43,17 @@ export default SingleBook;*/
 import  { Component } from 'react';
 import Card from 'react-bootstrap/Card';
 
-class SingleBook extends Component {
+
+class SingleBook extends Component { 
   constructor(props) {
-    super(props);
+    super(props); 
+    //lo stato iniziale è false
     this.state = {
       selected: false,
     };
   }
 
+  //metodo per cambiare lo stato al click
   handleSelect = () => {
     this.setState((prevState) => ({
       selected: !prevState.selected,
@@ -61,7 +64,7 @@ class SingleBook extends Component {
     const { book } = this.props;
     const { selected } = this.state;
 
-    return (
+    return (  //bordo e cursore
       <Card
         style={{
           width: '18rem',
@@ -70,7 +73,7 @@ class SingleBook extends Component {
           cursor: 'pointer',
         }}
       >
-        <Card.Img
+        <Card.Img //gestione del click sulla copertina
           variant="top"
           src={book.img}
           alt={book.title}

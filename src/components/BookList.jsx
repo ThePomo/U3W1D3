@@ -27,7 +27,7 @@ const BookList = ({ books }) => {
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
-
+   // Filtrare i libri 
   const filteredBooks = books.filter((book) =>
     book.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
